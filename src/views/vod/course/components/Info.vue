@@ -215,6 +215,7 @@ export default {
     },
     //修改
     updateData() {
+      console.log(this.courseInfo)
       courseApi.updateCourseInfoById(this.courseInfo).then((response) => {
         this.$message.success(response.message);
         this.$parent.courseId = response.data; // 获取courseId
