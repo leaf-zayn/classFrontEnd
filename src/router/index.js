@@ -98,20 +98,6 @@ export const constantRoutes = [
       },
     ]
   },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
   {
     path: '/nested',
     component: Layout,
@@ -170,6 +156,43 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/activity',
+    component: Layout,
+    redirect: '/couponInfo/list',
+    name: 'Activity',
+    meta: { title: '营销活动管理', icon: 'el-icon-football' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'couponInfo/list',
+        name: 'CouponInfo',
+        component: () => import('@/views/activity/couponInfo/list'),
+        meta: { title: '优惠券列表' }
+      },
+      {
+        path: 'couponInfo/add',
+        name: 'CouponInfoAdd',
+        component: () => import('@/views/activity/couponInfo/form'),
+        meta: { title: '添加' },
+        hidden: true
+      },
+      {
+        path: 'couponInfo/edit/:id',
+        name: 'CouponInfoEdit',
+        component: () => import('@/views/activity/couponInfo/form'),
+        meta: { title: '编辑', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'couponInfo/show/:id',
+        name: 'CouponInfoShow',
+        component: () => import('@/views/activity/couponInfo/show'),
+        meta: { title: '详情', noCache: true },
+        hidden: true
+      }
+    ]
+  },
   // 课程管理
   {
     path: '/vodcourse',
@@ -218,6 +241,42 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/order',
+    component: Layout,
+    redirect: '/order/orderInfo/list',
+    name: 'Order',
+    meta: { title: '订单管理', icon: 'el-icon-truck' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'orderInfo/list',
+        name: 'OrderInfo',
+        component: () => import('@/views/order/list'),
+        meta: { title: '订单列表' }
+      }
+    ]
+  },
+  {
+    path: '/wechat',
+    component: Layout,
+    redirect: '/wechat/menu/list',
+    name: 'Wechat',
+    meta: {
+      title: '公众号菜单管理',
+      icon: 'el-icon-refrigerator'
+    },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'menu/list',
+        name: 'Menu',
+        component: () => import('@/views/wechat/menu/list'),
+        meta: { title: '菜单列表' }
+      }
+    ]
+  },
+
 
   {
     path: 'external-link',
