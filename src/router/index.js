@@ -49,7 +49,7 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '主页',
       component: () => import('@/views/dashboard/index'),
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
@@ -60,7 +60,7 @@ export const constantRoutes = [
     redirect: '/subject/list',
     name: '课程分类管理',
     alwaysShow: true,
-    meta: { title: '课程分类管理', icon: 'example' },
+    meta: { title: '课程分类管理', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'list',
@@ -75,7 +75,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/vod/teacher/list',
     name: 'vod',
-    meta: { title: '讲师管理', icon: 'el-icon-s-help' },
+    meta: { title: '讲师管理', icon: 'el-icon-user' },
     children: [
       {
         path: 'teacher/list',
@@ -93,67 +93,9 @@ export const constantRoutes = [
         path: 'teacher/edit/:id',
         name: 'TeacherEdit',
         component: () => import('@/views/vod/teacher/form'),
-        meta: { title: '编辑讲师' },
+        meta: { title: '编辑讲师' , icon: 'table'},
         hidden: true
       },
-    ]
-  },
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
     ]
   },
   {
@@ -168,7 +110,7 @@ export const constantRoutes = [
         path: 'couponInfo/list',
         name: 'CouponInfo',
         component: () => import('@/views/activity/couponInfo/list'),
-        meta: { title: '优惠券列表' }
+        meta: { title: '优惠券列表', icon: 'table' }
       },
       {
         path: 'couponInfo/add',
@@ -209,7 +151,7 @@ export const constantRoutes = [
         path: 'course/list',
         name: 'CourseList',
         component: () => import('@/views/vod/course/list'),
-        meta: { title: '课程列表' }
+        meta: { title: '课程列表', icon: 'table' }
       },
       {
         path: 'course/info',
@@ -253,7 +195,7 @@ export const constantRoutes = [
         path: 'orderInfo/list',
         name: 'OrderInfo',
         component: () => import('@/views/order/list'),
-        meta: { title: '订单列表' }
+        meta: { title: '订单列表' , icon: 'table'}
       }
     ]
   },
@@ -272,7 +214,7 @@ export const constantRoutes = [
         path: 'menu/list',
         name: 'Menu',
         component: () => import('@/views/wechat/menu/list'),
-        meta: { title: '菜单列表' }
+        meta: { title: '菜单列表' , icon: 'table' }
       }
     ]
   },
@@ -283,7 +225,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'https://github.com/leaf-zayn/JavaClass',
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
